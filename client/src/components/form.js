@@ -1,47 +1,42 @@
-import React from "react";
-import NavBar from "./NavBar";
 
-import  { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import "../styles/donate.css"
+import './form.css'; // Import your CSS file here
 
-export default function Donate(){
-    const [formData, setFormData] = useState({
-        Hospitalid: '',
-        name: '',
-        address: '',
-        donationdate: '',
-        donorage: '',
-        exp_date: '',
-        organ: ''
-      });
-    
-      const handleChange = (event) => {
-        setFormData({
-          ...formData,
-          [event.target.name]: event.target.value
-        });
-      };
-    
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-          await axios.post('/api/hospitals', formData);
-          alert('Form submitted successfully');
-        } catch (error) {
-          alert('Error submitting form');
-        }
-      };
-      return (
-          <>
-          <NavBar />
-        <div className="donate">
-        <form onSubmit={handleSubmit}>
+function HospitalRegistrationForm() {
+  const [formData, setFormData] = useState({
+    Hospitalid: '',
+    name: '',
+    address: '',
+    donationdate: '',
+    donorage: '',
+    exp_date: ''
+  });
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post('/api/hospitals', formData);
+      alert('Form submitted successfully');
+    } catch (error) {
+      alert('Error submitting form');
+    }
+  };
+
+  return (
+    <div className="container">
+      <form onSubmit={handleSubmit}>
         <h1 className="main_heading">Hospital Registration Form</h1>
         <hr />
         <br />
         <p className="required_field">* this field is required</p>
-        {/* id */}
         <p>
           Hospital ID: *
           <input
@@ -53,8 +48,6 @@ export default function Donate(){
             onChange={handleChange}
           />
         </p>
-
-        {/* Name */}
         <p>
           Hospital Name: *
           <input
@@ -66,20 +59,6 @@ export default function Donate(){
             onChange={handleChange}
           />
         </p>
-
-        <p>
-          Organ: *
-          <input
-            type="text"
-            name="organ"
-            placeholder="Ex. Heart"
-            required
-            value={formData.organ}
-            onChange={handleChange}
-          />
-        </p>
-
-        {/* address */}
         <p>
           Hospital Address: *
           <textarea
@@ -126,12 +105,14 @@ export default function Donate(){
             onChange={handleChange}
           />
         </p>
-        <input type="submit" value="Submit" className="submit"/>
+        <input type="submit" value="Submit" />
       </form>
-      {/* <a href="./index.html">
-        {/* <button className="btns">Go Back</button> 
-      </a> */}
-        </div>
-        </>
-    )
+      <a href="./index.html">
+        <button className="btns">Go Back</button>
+      </a>
+    </div>
+  );
 }
+
+export default HospitalRegistrationForm;
+

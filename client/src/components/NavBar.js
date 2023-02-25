@@ -11,7 +11,7 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            NULIFE
+            NuLife
             <i className="fas fa-code"></i>
           </NavLink>
 

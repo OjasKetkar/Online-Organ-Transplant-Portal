@@ -11,28 +11,28 @@ export default function Card(){
             <div className="card-image">CardImage</div>
 
             <div className="card-organ">
-                <h2> CardOrgan</h2>
+                <h2> Heart</h2>
             </div>
 
             <div className="organ-details">
             <div className="card-hospital card_">
-                Hospital : CardHospitalName
+                Hospital : Bharti
             </div>
 
             <div className="card-address card_">
-                Address: CardAddress
+                Address: Pune
             </div>
 
             <div className="card-expiry card_">
-                Expiry Date: Card expiry
+                Expiry Date: 29/03/2025
             </div>
 
             <div className="card-age card_">
-                Donnor Age: CardAge
+                Donnor Age: 25
             </div>
 
             <div className="card-contact card_">
-                Contact: CardContact
+                Contact: +91-5773930576
             </div>
             </div>
 

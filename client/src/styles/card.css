@@ -17,13 +17,13 @@
     /* background-color: grey; */
     padding: 15px;
     /* background-color: #fff; */
-    height: 70% ;
+    height: 75% ;
     border-radius: 25px;
     box-shadow: 1px 1px 5px 1px #c4c1c1;
 }
 
 .card-image{
-    background-color: #5029bc;
+    /* background-color: #5029bc; */
     height: 40%;
     border-radius: 20px;
 }
