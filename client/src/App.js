@@ -1,21 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
-import {Route ,Routes, BrowserRouter , Redirect} from 'react-router-dom'
+import {Route ,Routes, Redirect, BrowserRouter} from 'react-router-dom'
 import Login from './components/login';
 import Signup from './components/signup';
-import requestPage from './components/requestPage.js';
+import RequestPage from './components/requestPage.js';
 import Home from './components/Home';
+import Contact from './components/Contact';
+import Donate from './components/Donate';
 
 function App() {
   return (
-    
     <div className="App">
-      <></>
       <BrowserRouter>
-        <Route path='/request' component />
-        <Route path='/' exact component={<Home />} />
+      <Routes>
+
+        <Route path='/' element = {<Home />} />
+        <Route path='/home' element = {<Home />} />
+        <Route path='/donate' element = {<Login />} />
+        <Route path='/request' element = {<RequestPage />} />
+        <Route path='/contact' element = {<Contact />} />
+
+      </Routes>
       </BrowserRouter>
-       
+      
     </div>
   );
 }
